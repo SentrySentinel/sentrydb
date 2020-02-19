@@ -1,0 +1,43 @@
+service: sentry-api
+plugins:
+  - serverless-webpack
+  - serverless-offline
+frameworkVersion: ^=1.27.0
+provider:
+  name: aws
+  runtime: nodejs12.x
+  vpc: 
+    securityGroupIds:
+      - sg-5a03b871
+    subnetIds:
+      - subnet-570e1430
+      - subnet-2a648375
+      - subnet-2551b004
+      - subnet-dd09d5d3
+      - subnet-cb90bef5
+      - subnet-38389275
+  environment:
+    RDS_HOSTNAME: 'sentrydb3.czhll2nnhhc9.us-east-1.rds.amazonaws.com'
+    RDS_USERNAME: 'admin'
+    RDS_PASSWORD: 'admin1234'
+    RDS_PORT: 3306
+  tags:
+    service: sentry-api
+package:
+  individually: true
+functions:
+  getSentryApi:
+    handler: src/function/getSentryApi/index.handler
+    events:
+      - http:
+          path: '/get_sentry_api'
+          method: get
+
+  updateGeolocation:
+    handler: src/function/updateGeolocation/index.handler
+    events:
+      - http:
+          path: '/update_geolocation'
+          method: post
+
+      

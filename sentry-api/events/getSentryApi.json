@@ -1,0 +1,13 @@
+{
+    "headers": {
+      "Host": "localhost: 3000",
+      "User-Agent": "curl/7.54.0",
+      "Accept": "*/*"
+    },
+    "path": "/get_sentry_api",
+    "resourcePath": "/get_sentry_api",
+    "queryStringParameters": {
+    },
+    "httpMethod": "GET"
+  }
+  

@@ -1,0 +1,42 @@
+{
+  "name": "sentry-api",
+  "version": "1.0.0",
+  "description": "sample sentry api project",
+  "main": "index.js",
+  "scripts": {
+    "listCurrencies": "./node_modules/.bin/sls invoke local --stage local -p ./events/get-currencies-list.json -f getCurrencyList",
+    "latestRate": "./node_modules/.bin/sls invoke local --stage local -p ./events/get-latest-rate.json -f getLatestRate",
+    "offline": "AWS_ACCESS_KEY_ID=foo AWS_SECRET_ACCESS_KEY=bar AWS_SESSION_TOKEN=baz serverless offline start --stage local"
+  },
+  "author": "Prajwal",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.6.8",
+    "aws-lambda": "^0.1.2",
+    "aws-xray-sdk": "^2.3.4",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "request": "^2.88.0",
+    "serverless-http": "^2.0.2"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.621.0",
+    "dotenv-webpack": "^1.7.0",
+    "fork-ts-checker-webpack-plugin": "^1.4.3",
+    "serverless": "^1.48.3",
+    "serverless-offline": "^5.8.0",
+    "serverless-webpack": "^5.3.1",
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.37.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
