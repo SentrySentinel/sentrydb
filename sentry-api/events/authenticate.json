@@ -1,0 +1,10 @@
+{
+    "headers": {
+      "Host": "localhost: 3000",
+      "User-Agent": "curl/7.54.0",
+      "Accept": "*/*"
+    },
+    "path": "/authenticate/2494100525",
+    "resourcePath": "/authenticate",
+    "httpMethod": "GET"
+}

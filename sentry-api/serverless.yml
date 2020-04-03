@@ -30,14 +30,28 @@ functions:
     handler: src/function/getSentryApi/index.handler
     events:
       - http:
-          path: '/get_sentry_api'
+          path: "/get_sentry_api"
+          method: get
+
+  authenticate:
+    handler: src/function/authenticate/index.handler
+    events:
+      - http:
+          path: "/authenticate/{RFID}"
           method: get
 
   updateGeolocation:
     handler: src/function/updateGeolocation/index.handler
     events:
       - http:
-          path: '/update_geolocation'
-          method: post
+          path: "/updateGeolocation/{RFID}/{GEOLOCATION}"
+          method: get
 
-      
+  signIn:
+    handler: src/function/signIn/index.handler
+    events:
+      - http:
+          path: "/signIn/{RFID}/{USERNAME}/{PASSWORD}"
+          method: get    
+
+          

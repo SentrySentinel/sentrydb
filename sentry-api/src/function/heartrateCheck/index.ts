@@ -6,23 +6,33 @@ module.exports.handler = async (
   context: Context,
   callback: any
 ) => {
-  console.log(event);
-
   const response = {
     statusCode: 0,
     body: ""
   };
   try {
+    const rfId = Number(event.path.split("/")[2]);
+    const heartRate = event.path.split("/")[3];
+    console.log(`RFID: ${rfId}`);
+    console.log (`heartRate: ${heartRate}`)
+    
     const databaseService = new DatabaseService();
     await databaseService.connect();
-    const qeryResponse: any = await databaseService.query(
-      //Write a query on this to authenticate and check
-      "SELECT * FROM sentinel_DB.sentinel_info;"
+    const queryResponse: any = await databaseService.query(
+      //Get the data row for given RFID 
+      `UPDATE sentinel_DB.sentinel_info SET Heartrate = '${heartRate}' WHERE RFID=${rfId}`
     );
-    response["statusCode"] = 200;
-    response["body"] = JSON.stringify(qeryResponse);
-    console.log('response:' , response);
     
+    let status = `updated heartrate to ${heartRate}`;
+
+    console.log(`Query Response: ${JSON.stringify(queryResponse)}`);
+    
+    
+    console.log(`RFID Exist: ${status}`);
+    
+    response["statusCode"] = 200;
+    response["body"] = JSON.stringify({status});
+    console.log('response:' , response);
   } catch (error) {
     console.log(error);
     response["statusCode"] = 500;

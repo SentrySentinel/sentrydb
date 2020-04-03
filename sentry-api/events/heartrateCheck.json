@@ -1,0 +1,10 @@
+{
+    "headers": {
+      "Host": "localhost: 3000",
+      "User-Agent": "curl/7.54.0",
+      "Accept": "*/*"
+    },
+    "path": "/heartrateCheck/1001/1",
+    "resourcePath": "/heartrateCheck/1001",
+    "httpMethod": "GET"
+}

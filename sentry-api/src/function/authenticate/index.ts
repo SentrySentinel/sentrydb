@@ -12,16 +12,22 @@ module.exports.handler = async (
   };
   try {
     const rfId = Number(event.path.split("/")[2]);
-    const geolocation = event.path.split("/")[3];
     console.log(`RFID: ${rfId}`);
     
     const databaseService = new DatabaseService();
     await databaseService.connect();
     const queryResponse: any = await databaseService.query(
       //Get the data row for given RFID 
-      `UPDATE sentinel_DB.sentinel_info SET Geolocation = '${geolocation}' WHERE RFID=${rfId}`
+      `SELECT * FROM sentinel_DB.sentinel_info WHERE RFID=${rfId}`
     );
-    let status = "geolocation updated";
+    let status = false ;
+
+    //Check for authentication 
+    if (queryResponse.length > 0){
+      if (((queryResponse[0]["Heartrate"]) == "1") && ((queryResponse[0]["Geolocation"]) == "Austin")){
+          status = true;
+      }
+    }
 
     console.log(`Query Response: ${JSON.stringify(queryResponse)}`);
     

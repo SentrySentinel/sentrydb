@@ -12,16 +12,28 @@ module.exports.handler = async (
   };
   try {
     const rfId = Number(event.path.split("/")[2]);
-    const geolocation = event.path.split("/")[3];
+    const userName = (event.path.split("/")[3]);
+    const password = (event.path.split("/")[4]);
     console.log(`RFID: ${rfId}`);
+    console.log (`geolocation: ${userName}`)
     
     const databaseService = new DatabaseService();
     await databaseService.connect();
+    let status = "login unsuccessful";
+
+
     const queryResponse: any = await databaseService.query(
       //Get the data row for given RFID 
-      `UPDATE sentinel_DB.sentinel_info SET Geolocation = '${geolocation}' WHERE RFID=${rfId}`
+      `SELECT * FROM sentinel_DB.sentinel_info WHERE RFID=${rfId}`
     );
-    let status = "geolocation updated";
+    
+    if (queryResponse.length > 0){
+      if (((queryResponse[0]["Username"]) == userName) && ((queryResponse[0]["Password"]) == password)){
+          status = 'login successful';
+      }
+    }
+    
+
 
     console.log(`Query Response: ${JSON.stringify(queryResponse)}`);
     
@@ -30,7 +42,6 @@ module.exports.handler = async (
     
     response["statusCode"] = 200;
     response["body"] = JSON.stringify({status});
-    
     console.log('response:' , response);
   } catch (error) {
     console.log(error);

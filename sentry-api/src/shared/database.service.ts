@@ -26,7 +26,7 @@ export class DatabaseService {
 
   query(qr: string) {
     return new Promise((resolve: any, reject: any) => {
-      this.connection.query(qr, (data: any, err: any) => {
+      this.connection.query(qr, (err: any, data: any) => {
         if (!!err) {
           return reject(err);
         }
@@ -48,3 +48,4 @@ export class DatabaseService {
     });
   }
 }
+
