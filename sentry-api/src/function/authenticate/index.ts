@@ -46,10 +46,10 @@ module.exports.handler = async (
       //Change the hard coded values with the actual location of the microcontroller
       console.log(latitude);
       console.log(longitude);
-      var distance = getDistance(30.348684, -97.687514, latitude, longitude)
+      var distance = getDistance(29.6347917, -98.5064894, latitude, longitude)
       console.log("distance is ", distance);
 
-      if ( distance < 3 ){
+      if ( distance < 10){
           status = true;
       }
     }

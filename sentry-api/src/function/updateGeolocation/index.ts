@@ -12,7 +12,11 @@ module.exports.handler = async (
   };
   try {
     const rfId = Number(event.path.split("/")[2]);
-    const geolocation = event.path.split("/")[3];
+    //const geolocation = event.path.split("/")[3];
+
+    let jsonbody =  JSON.parse(event.body) 
+    const geolocation = jsonbody["geolocation"]
+    
     console.log(`RFID: ${rfId}`);
     
     const databaseService = new DatabaseService();

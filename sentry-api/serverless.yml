@@ -44,14 +44,14 @@ functions:
     handler: src/function/updateGeolocation/index.handler
     events:
       - http:
-          path: "/updateGeolocation/{RFID}/{GEOLOCATION}"
-          method: get
+          path: "/updateGeolocation/{RFID}"
+          method: post
 
   signIn:
     handler: src/function/signIn/index.handler
     events:
       - http:
-          path: "/signIn/{RFID}/{USERNAME}/{PASSWORD}"
-          method: get    
+          path: "/signIn/{RFID}"
+          method: post   
 
           

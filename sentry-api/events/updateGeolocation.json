@@ -4,7 +4,8 @@
       "User-Agent": "curl/7.54.0",
       "Accept": "*/*"
     },
-    "path": "/updateGeolocation/1002/Austin",
-    "resourcePath": "/updateGeolocation/1002",
-    "httpMethod": "get"
+    "path": "/updateGeolocation/1001",
+    "resourcePath": "/updateGeolocation/1001",
+    "httpMethod": "get",
+    "body": "Austin"
 }

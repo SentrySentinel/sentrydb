@@ -1,0 +1,11 @@
+{
+    "headers": {
+      "Host": "localhost: 3000",
+      "User-Agent": "curl/7.54.0",
+      "Accept": "*/*"
+    },
+    "path": "/signIn/1001",
+    "resourcePath": "/signIn/1001",
+    "httpMethod": "POST",
+    "body": {"username": "Dilan", "password": "Dilan1"}
+}

@@ -137,7 +137,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sentry-api/dev/1585934730002-2020-04-03T17:25:30.002Z/getSentryApi.zip"
+          "S3Key": "serverless/sentry-api/dev/1588127720052-2020-04-29T02:35:20.052Z/getSentryApi.zip"
         },
         "FunctionName": "sentry-api-dev-getSentryApi",
         "Handler": "src/function/getSentryApi/index.handler",
@@ -200,7 +200,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sentry-api/dev/1585934730002-2020-04-03T17:25:30.002Z/authenticate.zip"
+          "S3Key": "serverless/sentry-api/dev/1588127720052-2020-04-29T02:35:20.052Z/authenticate.zip"
         },
         "FunctionName": "sentry-api-dev-authenticate",
         "Handler": "src/function/authenticate/index.handler",
@@ -246,14 +246,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AuthenticateLambdaVersionYMV9yRWZJqIJhR36RxJNE9EdT2zAE00ZD08D1OerC0": {
+    "AuthenticateLambdaVersioniq0hrzxOA4kqck4XBwkfaA7YFNEiGoMqZRVbBS244": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AuthenticateLambdaFunction"
         },
-        "CodeSha256": "UFszEruyCiw88MqEkuH0e6YadFinXJD4eUmjeTbb+aI="
+        "CodeSha256": "58JSMT1BpVEbX4TwtMLDDmwYDnp2hm5FrgXPl9LO8lU="
       }
     },
     "UpdateGeolocationLambdaFunction": {
@@ -263,7 +263,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sentry-api/dev/1585934730002-2020-04-03T17:25:30.002Z/updateGeolocation.zip"
+          "S3Key": "serverless/sentry-api/dev/1588127720052-2020-04-29T02:35:20.052Z/updateGeolocation.zip"
         },
         "FunctionName": "sentry-api-dev-updateGeolocation",
         "Handler": "src/function/updateGeolocation/index.handler",
@@ -309,14 +309,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateGeolocationLambdaVersionPlyc9y3GPgSt3ol7OY2gGPd4qJqGsUlUN0TLW8p9oGA": {
+    "UpdateGeolocationLambdaVersionFkY9Zg5HTK46p2z3oxmD3uZ7JQJovxESoBPcbPQFU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateGeolocationLambdaFunction"
         },
-        "CodeSha256": "P+1UV2XoaIUxD+LsZ9qzVm7S4+yQu9Azp3of17Pf/DM="
+        "CodeSha256": "NWP+O9VeBI/Q0JkMCU+f9ZnPENxrZrm7NfTxRzn6w9M="
       }
     },
     "SignInLambdaFunction": {
@@ -326,7 +326,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sentry-api/dev/1585934730002-2020-04-03T17:25:30.002Z/signIn.zip"
+          "S3Key": "serverless/sentry-api/dev/1588127720052-2020-04-29T02:35:20.052Z/signIn.zip"
         },
         "FunctionName": "sentry-api-dev-signIn",
         "Handler": "src/function/signIn/index.handler",
@@ -372,14 +372,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "SignInLambdaVersion1emTphkF1qanogvTl3dDq4sWRl6ahXh2Xrx5oank": {
+    "SignInLambdaVersionFD9kBRYNIti3Mr4QAdXvSaUFaPyRO6vJrJHNtZ5vPQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SignInLambdaFunction"
         },
-        "CodeSha256": "V1V/eixP8gde4uHGMW1RHAg70vJXTqfmaYl9j9QRh1s="
+        "CodeSha256": "NDlMpT5tW03y5m7tgFz3MyQnHkWD0ywMjucMleZx22o="
       }
     },
     "ApiGatewayRestApi": {
@@ -462,18 +462,6 @@
         }
       }
     },
-    "ApiGatewayResourceUpdategeolocationRfidVarGeolocationVar": {
-      "Type": "AWS::ApiGateway::Resource",
-      "Properties": {
-        "ParentId": {
-          "Ref": "ApiGatewayResourceUpdategeolocationRfidVar"
-        },
-        "PathPart": "{GEOLOCATION}",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
     "ApiGatewayResourceSignin": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
@@ -496,30 +484,6 @@
           "Ref": "ApiGatewayResourceSignin"
         },
         "PathPart": "{RFID}",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
-    "ApiGatewayResourceSigninRfidVarUsernameVar": {
-      "Type": "AWS::ApiGateway::Resource",
-      "Properties": {
-        "ParentId": {
-          "Ref": "ApiGatewayResourceSigninRfidVar"
-        },
-        "PathPart": "{USERNAME}",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
-    "ApiGatewayResourceSigninRfidVarUsernameVarPasswordVar": {
-      "Type": "AWS::ApiGateway::Resource",
-      "Properties": {
-        "ParentId": {
-          "Ref": "ApiGatewayResourceSigninRfidVarUsernameVar"
-        },
-        "PathPart": "{PASSWORD}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -611,13 +575,13 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodUpdategeolocationRfidVarGeolocationVarGet": {
+    "ApiGatewayMethodUpdategeolocationRfidVarPost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
-        "HttpMethod": "GET",
+        "HttpMethod": "POST",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceUpdategeolocationRfidVarGeolocationVar"
+          "Ref": "ApiGatewayResourceUpdategeolocationRfidVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -654,13 +618,13 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodSigninRfidVarUsernameVarPasswordVarGet": {
+    "ApiGatewayMethodSigninRfidVarPost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
-        "HttpMethod": "GET",
+        "HttpMethod": "POST",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSigninRfidVarUsernameVarPasswordVar"
+          "Ref": "ApiGatewayResourceSigninRfidVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -697,7 +661,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1585934711773": {
+    "ApiGatewayDeployment1588127699672": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -708,8 +672,8 @@
       "DependsOn": [
         "ApiGatewayMethodGetsentryapiGet",
         "ApiGatewayMethodAuthenticateRfidVarGet",
-        "ApiGatewayMethodUpdategeolocationRfidVarGeolocationVarGet",
-        "ApiGatewayMethodSigninRfidVarUsernameVarPasswordVarGet"
+        "ApiGatewayMethodUpdategeolocationRfidVarPost",
+        "ApiGatewayMethodSigninRfidVarPost"
       ]
     },
     "GetSentryApiLambdaPermissionApiGateway": {
@@ -876,19 +840,19 @@
     "AuthenticateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AuthenticateLambdaVersionYMV9yRWZJqIJhR36RxJNE9EdT2zAE00ZD08D1OerC0"
+        "Ref": "AuthenticateLambdaVersioniq0hrzxOA4kqck4XBwkfaA7YFNEiGoMqZRVbBS244"
       }
     },
     "UpdateGeolocationLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateGeolocationLambdaVersionPlyc9y3GPgSt3ol7OY2gGPd4qJqGsUlUN0TLW8p9oGA"
+        "Ref": "UpdateGeolocationLambdaVersionFkY9Zg5HTK46p2z3oxmD3uZ7JQJovxESoBPcbPQFU"
       }
     },
     "SignInLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SignInLambdaVersion1emTphkF1qanogvTl3dDq4sWRl6ahXh2Xrx5oank"
+        "Ref": "SignInLambdaVersionFD9kBRYNIti3Mr4QAdXvSaUFaPyRO6vJrJHNtZ5vPQ"
       }
     },
     "ServiceEndpoint": {

@@ -12,11 +12,18 @@ module.exports.handler = async (
   };
   try {
     const rfId = Number(event.path.split("/")[2]);
-    const userName = (event.path.split("/")[3]);
-    const password = (event.path.split("/")[4]);
+    //const userName = (event.path.split("/")[3]);
+    //const password = (event.path.split("/")[4]);
+
+    let jsonbody =  JSON.parse(event.body)   
+    const userName = jsonbody["username"];
+    const password = jsonbody["password"];
+
+
     console.log(`RFID: ${rfId}`);
-    console.log (`geolocation: ${userName}`)
-    
+    console.log (`username: ${userName}`)
+    console.log (`password: ${password}`)
+
     const databaseService = new DatabaseService();
     await databaseService.connect();
     let status = "login unsuccessful";
