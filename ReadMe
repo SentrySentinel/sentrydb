@@ -1,0 +1,2 @@
+sentry-api contains all the API used by Sentry Application. The documentation of the API and the database can be found 
+inside the sentry-api folder.
